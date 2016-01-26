@@ -14,7 +14,7 @@ Simply run:
 
 and docker-compose will set up an Express webserver and a MongoDB database in separate microservices. Alternatively, you can run just the webserver with:
 
-		docker run -ti -p=8080:3000 -v=`pwd`:/docker -w=/docker node:5.5-slim npm start
+		docker run -ti -p=80:3000 -v=`pwd`:/docker -w=/docker node:5.5-slim npm start
 
 The webserver application code will be dynamically mounted inside the container and the webserver automatically restarted on changes. Note that when running docker in a virtual machine (such as with boot2docker) filesystem file-change notifications are not forwarded between host and VM. This is why we're using plain polling for detecting changes to application files. This should work for smaller projects, though for larger you might want to look at [rsync](https://en.wikipedia.org/wiki/Rsync) or [docker-osx-dev](https://github.com/brikis98/docker-osx-dev).
 
