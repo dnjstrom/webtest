@@ -1,0 +1,11 @@
+{
+  "name": "mock-codeserver",
+  "description": "",
+  "authors": [
+    "Daniel Ström <D@nielstrom.se>"
+  ],
+  "private": true,
+  "dependencies": {
+    "skeleton": "~2.0.4"
+  }
+}

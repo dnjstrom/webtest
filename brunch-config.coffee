@@ -13,3 +13,9 @@ exports.config =
     usePolling: true
   npm:
     enabled: true
+  plugins:
+    postcss:
+      processors: [
+        require('postcss-import'),
+        require('postcss-cssnext')
+      ]
