@@ -1,0 +1,8 @@
+webserver:
+  build: .
+  ports:
+    - "80:3000"
+  links:
+    - database
+database:
+  image: mongo:3.2
