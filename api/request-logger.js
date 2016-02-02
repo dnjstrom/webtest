@@ -31,7 +31,7 @@ module.exports = function (req, res, next) {
   });
 
   // Log the request with winston.
-  logger.log('info', '%s -> %s\n%s', req.method, req.url, util.inspect(entry), {});
+  logger.log('info', '%s %s\n%s', req.method, req.url, util.inspect(entry), {});
 
   // Hand over to the next middleware.
   next();

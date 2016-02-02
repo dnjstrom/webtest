@@ -17,7 +17,10 @@ module.exports = function (mongoose, router) {
   router.get('/', function (req, res) {
     Bear.find()
       .then(function (bears) { res.json(bears); })
-      .catch(function (err) { res.send(err); });
+      .catch(function (err) {
+        res.status(418);
+        res.send(err);
+      });
   });
 
   // Create a new bear.
@@ -27,14 +30,22 @@ module.exports = function (mongoose, router) {
 
     bear.save()
       .then(function (bear) { res.json(bear); })
-      .catch(function (err) { res.send(err); });
+      .catch(function (err) {
+        res.status(418);
+        res.send(err);
+      });
   });
 
   // Get a specific bear by id.
   router.get('/:id', function (req, res) {
     Bear.findById(req.params.id)
-      .then(function (bear) { res.json(bear); })
-      .catch(function (err) { res.send(err); });
+      .then(function (bear) {
+        res.json(bear);
+      })
+      .catch(function (err) {
+        res.status(418);
+        res.send(err.message);
+      });
   });
 
   // Update a specific bear.
@@ -46,7 +57,10 @@ module.exports = function (mongoose, router) {
           res.json(bear);
         });
       })
-      .catch(function (err) { res.send(err); });
+      .catch(function (err) {
+        res.status(418);
+        res.send(err);
+      });
   });
 
   // Return the router for mounting.

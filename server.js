@@ -10,6 +10,7 @@ var express = require('express'),
 // Custom imports and definitions.
 var bear = require('./api/bear.js'),
     logger = require('./api/logger.js'),
+    responseLogger = require('./api/response-logger.js'),
     requestLogger = require('./api/request-logger.js'),
     port = 3000;
 
@@ -22,6 +23,9 @@ app.use(bodyParser.json());
 
 // Log incomoing requests automatically.
 app.use(requestLogger);
+
+// Log outgoing error responses automatically.
+app.use(responseLogger);
 
 // Connect to the database. The "database" host url is defined
 // automatically by docker through the "link" flag.
