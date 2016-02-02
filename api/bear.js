@@ -13,14 +13,14 @@ module.exports = function (mongoose, router) {
 
   // REST Routes
 
-  // GET all bears
+  // Get all bears.
   router.get('/', function (req, res) {
     Bear.find()
       .then(function (bears) { res.json(bears); })
       .catch(function (err) { res.send(err); });
   });
 
-  // PUT bear
+  // Create a new bear.
   router.post('/', function (req, res) {
     var bear = new Bear();
     bear.name = req.body.name;
@@ -30,13 +30,14 @@ module.exports = function (mongoose, router) {
       .catch(function (err) { res.send(err); });
   });
 
-  // GET bear by id
+  // Get a specific bear by id.
   router.get('/:id', function (req, res) {
     Bear.findById(req.params.id)
       .then(function (bear) { res.json(bear); })
       .catch(function (err) { res.send(err); });
   });
 
+  // Update a specific bear.
   router.put('/:id', function (req, res) {
     Bear.findById(req.params.id)
       .then(function (bear) {
