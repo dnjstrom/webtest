@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
 <head>
-	<meta charset="UTF-8">
-	<title></title>
-  <link rel="stylesheet" type="text/css" href="app.css">
+  <meta charset="UTF-8">
+  <title>Webserver</title>
+  <base href="/">
+  <link rel="stylesheet" type="text/css" href="/vendor.css">
+  <link rel="stylesheet" type="text/css" href="/app.css">
 </head>
 <body ng-controller="AppCtrl">
-	<h1>Code Server</h1>
+  <h1>Mock Server</h1>
   <p>Hello there!</p>
 
-  <p>{{name}}</p>
+  <div ng-view></div>
 
-	<script src="app.js"></script>
-  <script>require('main');</script>
+  <p>Made by: {{::author}}</p>
+
+  <script src="/vendor.js"></script>
+  <script src="/app.js"></script>
 </body>
 </html>

@@ -35,11 +35,16 @@ mongoose.connection.on('error', function (err) {
   logger.error('Could not connect to the database: ', err)
 });
 
-// Mount the single-page admin interface under "/admin".
-app.use('/admin', express.static(path.join(__dirname, '/public')));
-
-// Mount the bear api under "/admin/api/bear".
+// Mount the bear api under "/admin/api/bears".
 app.use('/admin/api/bears', bear(mongoose, router));
+
+// Mount the single-page admin interface under "/admin".
+app.use('/', express.static(path.join(__dirname, '/public')));
+
+// Redirect everything else to the angular app.
+app.get('*', function (req, res) {
+  res.sendfile(path.join(__dirname, '/public/index.html'));
+})
 
 // Actually launch the server.
 app.listen(port, function () {

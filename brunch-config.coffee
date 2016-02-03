@@ -1,9 +1,16 @@
 exports.config =
+  modules:
+    definition: false
+    wrapper: false
   files:
     javascripts:
-      joinTo: "app.js"
+      joinTo:
+        'vendor.js': /^(bower_components|vendor)/
+        'app.js': /^app/
     stylesheets:
-      joinTo: "app.css"
+      joinTo:
+        'vendor.css': /^(bower_components|vendor)/
+        'app.css': /^app/
     templates:
       joinTo: "app.js"
   server:
@@ -11,8 +18,6 @@ exports.config =
     port: 3000
   watcher:
     usePolling: true
-  npm:
-    enabled: true
   plugins:
     postcss:
       processors: [

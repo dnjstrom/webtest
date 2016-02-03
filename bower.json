@@ -1,0 +1,24 @@
+{
+  "name": "webtest",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Daniel Ström <D@nielstrom.se>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dnjstrom/webtest",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.4.9",
+    "skeleton": "^2.0.4",
+    "angular-resource": "^1.4.9"
+  }
+}
