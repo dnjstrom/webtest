@@ -4,11 +4,12 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     router = express.Router(),
     path = require('path'),
+    nocache = require('connect-nocache')(),
     mongo = require('mongodb'),
     mongoose = require('mongoose');
 
 // Custom imports and definitions.
-var bear = require('./api/bear.js'),
+var bears = require('./api/bears.js'),
     logger = require('./api/logger.js'),
     responseLogger = require('./api/response-logger.js'),
     requestLogger = require('./api/request-logger.js'),
@@ -27,16 +28,19 @@ app.use(requestLogger);
 // Log outgoing error responses automatically.
 app.use(responseLogger);
 
-// Connect to the database. The "database" host url is defined
-// automatically by docker through the "link" flag.
+// Connect to the database. The "database" host url is defined automatically by
+// docker through the "link" flag.
 mongoose.connect('mongodb://database/test');
 
 mongoose.connection.on('error', function (err) {
   logger.error('Could not connect to the database: ', err)
 });
 
+// Disallow caching of api-calls.
+app.use('/api', nocache);
+
 // Mount the bear api under "/admin/api/bears".
-app.use('/admin/api/bears', bear(mongoose, router));
+app.use('/api/bears', bears(mongoose, router))
 
 // Mount the single-page admin interface under "/admin".
 app.use('/', express.static(path.join(__dirname, '/public')));

@@ -6,16 +6,20 @@ angular
 
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-      .when('bears', {
+      .when('/bears', {
         templateUrl: 'bears/list.html',
         controller: 'BearListCtrl'
       })
-      .when('bears/:bearId', {
+      .when('/bears/:id', {
         templateUrl: 'bears/detail.html',
         controller: 'BearDetailCtrl'
       })
+      .when('/bears/:id/edit', {
+        templateUrl: 'bears/edit.html',
+        controller: 'BearEditCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/404'
       });
 
       $locationProvider.html5Mode(true);

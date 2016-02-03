@@ -8,12 +8,27 @@
   <link rel="stylesheet" type="text/css" href="/app.css">
 </head>
 <body ng-controller="AppCtrl">
-  <h1>Mock Server</h1>
-  <p>Hello there!</p>
 
-  <div ng-view></div>
+  <div class="container">
+    <header class="row">
+      <nav class="eight columns">
+        <ul class="navigation-links">
+          <li class="navigation-links__link"><a href="/bears">Bears</a></li>
+          <li class="navigation-links__link"><a href="/moose">Moose</a></li>
+          <li class="navigation-links__link"><a href="/wolfs">Wolves</a></li>
+        </ul>
+      </nav>
 
-  <p>Made by: {{::author}}</p>
+      <h1 class="four columns header-title">Mock Server</h1>
+    </header>
+
+    <main ng-view></main>
+
+    <footer>
+      <p>Made by: {{::author}}</p>
+    </footer>
+  </div>
+
 
   <script src="/vendor.js"></script>
   <script src="/app.js"></script>

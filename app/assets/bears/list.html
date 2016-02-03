@@ -1,7 +1,20 @@
-<h1>This is a listing of all bears</h1>
+<div class="column">
+  <div class="row">
+    <h1>This is a listing of all bears</h1>
 
-<ul class="bears">
-  <li class="bear" ng-repeat="bear in bears">
-    <p>{{bear.name}}</p>
-  </li>
-</ul>
+    <table class="u-full-width">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Hobby</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="bear in bears">
+        <td><a href="/bears/{{bear._id}}">{{bear.name}}</a></td>
+        <td>{{bear.hobby}}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+</div>

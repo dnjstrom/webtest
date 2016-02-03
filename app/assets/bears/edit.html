@@ -1,0 +1,11 @@
+<div class="column">
+  <div class="row">
+    <h1 class="page-title">
+      <a href="/bears/{{bear._id}}">{{bear.name}}</a>
+    </h1>
+    <form>
+      <input type="text" ng-blur="save(bear)" ng-model="bear.name">
+      <input type="text" ng-blur="save(bear)" ng-model="bear.hobby">
+    </form>
+  </div>
+</div>
