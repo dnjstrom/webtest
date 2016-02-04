@@ -1,3 +1,7 @@
+html {
+  font-size: 14px;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -30,7 +34,7 @@ header .columns {
   }
 
   &:hover {
-    border-bottom: 2px solid #1eaedb;
+    border-bottom: 2px solid hsla(194, 86%, 57%, 1);
   }
 }
 
@@ -43,6 +47,69 @@ header .columns {
   color: black;
   text-decoration: none;
   &:hover {
-    color: #1eaedb;
+    color: #33C3F0;
+  }
+}
+
+.notifications {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  list-style-type: none;
+}
+
+.notifications__message {
+  position: relative;
+  margin: 0;
+  padding: .5rem 1rem;
+  color: black;
+  background: #FFFFFFEE;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  &--info {
+    border-left: .4rem solid hsla(194, 86%, 57%, 1);
+    &:hover {
+      border-right: 2px solid hsla(194, 86%, 57%, 1);
+    }
+  }
+  &--warn {
+    border-left: .4rem solid hsla(60, 86%, 57%, 1);
+    &:hover {
+      border-right: 2px solid hsla(60, 86%, 57%, 1);
+    }
+  }
+  &--error {
+    border-left: .4rem solid hsla(0, 86%, 57%, 1);
+    &:hover {
+      border-right: 2px solid hsla(0, 86%, 57%, 1);
+    }
+  }
+  &--success {
+    border-left: .4rem solid hsla(90, 86%, 57%, 1);
+    &:hover {
+      border-right: 2px solid hsla(90, 86%, 57%, 1);
+    }
+  }
+
+  & p {
+    display: inline-block;
+    margin: 0;
+  }
+
+  & span {
+    padding-top: .6rem;
+  }
+}
+
+.notifications__message__close {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  bottom: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  &:hover {
+    color: hsla(194, 86%, 57%, 1);
   }
 }
