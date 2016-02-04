@@ -4,8 +4,9 @@
       <a href="/bears/{{bear._id}}">{{bear.name}}</a>
     </h1>
     <form>
-      <input type="text" ng-blur="save(bear)" ng-model="bear.name">
-      <input type="text" ng-blur="save(bear)" ng-model="bear.hobby">
+      <input type="text" ng-model="bear.name">
+      <input type="text" ng-model="bear.hobby">
+      <button class="button-primary" ng-click="save(bear)">Save</button>
     </form>
   </div>
 </div>

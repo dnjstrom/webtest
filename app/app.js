@@ -10,6 +10,10 @@ angular
         templateUrl: 'bears/list.html',
         controller: 'BearListCtrl'
       })
+      .when('/bears/create', {
+        templateUrl: 'bears/edit.html',
+        controller: 'BearEditCtrl'
+      })
       .when('/bears/:id', {
         templateUrl: 'bears/detail.html',
         controller: 'BearDetailCtrl'
