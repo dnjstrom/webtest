@@ -1,6 +1,7 @@
 angular
   .module("app", [
     'ngRoute',
+    'app.login',
     'bears'
   ])
 
@@ -22,6 +23,10 @@ angular
         templateUrl: 'bears/edit.html',
         controller: 'BearEditCtrl'
       })
+      .when('/login', {
+        templateUrl: 'login/login.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
         redirectTo: '/404'
       });
@@ -32,4 +37,3 @@ angular
   .controller("AppCtrl", ($scope) => {
     $scope.author = "Daniel Ström";
   });
-

@@ -1,6 +1,6 @@
 web:
-  image: node:5.5-slim
   container_name: web
+  image: node:5.5-slim
   ports:
     - "80:3000"
     - "9486:9486" # autoreload
@@ -11,5 +11,5 @@ web:
   working_dir: /docker
   command: npm start
 db:
-  image: mongo:3.2
   container_name: db
+  image: mongo:3.2

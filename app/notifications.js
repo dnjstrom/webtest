@@ -20,6 +20,8 @@ angular
 
     notifier.clear = function (index) {
       if (typeof index !== 'undefined' && index >= 0 && index < notifications.length) {
+        notifications.splice(index, 1);
+      } else {
         notifications.length = 0;
       }
     };
