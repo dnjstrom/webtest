@@ -34,7 +34,6 @@ angular
           bear.$update()
             .then(function (res) {
               $location.path('/bears/' + res._id);
-              notifier.success('The bear has been updated.');
             })
             .catch(function (res) {
               notifier.error('Could not save the bear.');
@@ -44,7 +43,6 @@ angular
           // This bear is new.
           bear.$save()
             .then(function (res) {
-              notifier.success('The bear has been created.');
               $location.path('/bears/' + res._id);
             })
             .catch(function (res) {

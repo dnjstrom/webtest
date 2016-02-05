@@ -74,9 +74,9 @@ header .columns {
     }
   }
   &--warn {
-    border-left: .4rem solid hsla(60, 86%, 57%, 1);
+    border-left: .4rem solid hsla(50, 86%, 57%, 1);
     &:hover {
-      border-right: 2px solid hsla(60, 86%, 57%, 1);
+      border-right: 2px solid hsla(50, 86%, 57%, 1);
     }
   }
   &--error {

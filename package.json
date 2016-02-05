@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "preserver": "forever stopall",
     "server": "nodemon -L server.js",
-    "start": "npm run server && brunch watch",
+    "start": "npm run server & brunch watch",
     "prebuild": "npm install",
     "build": "brunch build",
     "preforever": "npm run build",
@@ -16,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "auto-reload-brunch": "^2.0.0",
     "babel-brunch": "^6.0.0",
     "body-parser": "^1.14.2",
     "bower": "^1.7.7",
