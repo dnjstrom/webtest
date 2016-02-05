@@ -3,7 +3,7 @@ web:
   container_name: web
   ports:
     - "80:3000"
-    - "9485:9485"
+    - "9486:9486" # autoreload
   links:
     - db:database
   volumes:

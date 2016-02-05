@@ -19,6 +19,8 @@ exports.config =
   watcher:
     usePolling: true
   plugins:
+    autoReload:
+      port: 9486
     postcss:
       processors: [
         require('postcss-import'),
