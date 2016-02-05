@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "postinstall": "bower install",
     "server": "nodemon -L server.js",
     "start": "npm run server & brunch watch",
     "prebuild": "npm install",
