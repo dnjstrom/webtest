@@ -9,9 +9,11 @@ angular
     });
   }])
 
-  .controller('BearListCtrl', ['$scope', 'Bear',
-    function ($scope, Bear) {
-      $scope.bears = Bear.query();
+  .controller('BearListCtrl', ['$scope', '$routeParams', 'Bear',
+    function ($scope, $routeParams, Bear) {
+      $scope.page = parseInt($routeParams.page) || 1;
+      $scope.count = parseInt($routeParams.count) || 100;
+      $scope.query = Bear.get({page: $scope.page, count: $scope.count});
     }])
 
   .controller('BearDetailCtrl', ['$scope', '$routeParams', 'Bear',

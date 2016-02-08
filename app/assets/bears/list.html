@@ -14,11 +14,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="bear in bears">
+      <tr ng-repeat="bear in query.records">
         <td><a href="/bears/{{bear._id}}">{{bear.name}}</a></td>
         <td>{{bear.hobby}}</td>
       </tr>
     </tbody>
     </table>
+    <div class="pagination">
+      <a ng-class="{disabled: page <= 1}" href="/bears?page={{page-1}}&count={{count}}">Previous</a>
+      <a ng-class="{disabled: (count * page) >= query.total_records}" href="/bears?page={{page+1}}&count={{count}}">Next</a>
+    </div>
   </div>
 </div>
