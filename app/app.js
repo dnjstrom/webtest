@@ -28,7 +28,8 @@ angular
         controller: 'LoginCtrl'
       })
       .otherwise({
-        redirectTo: '/404'
+        redirectTo: '/404',
+        templateUrl: '404.html'
       });
 
       $locationProvider.html5Mode(true);
