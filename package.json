@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "postinstall": "bower install",
-    "server": "nodemon -L server.js",
+    "server": "nodemon -L --ignore app/ --ignore public/ server.js",
     "start": "npm run server & brunch watch",
     "prebuild": "npm install",
     "build": "brunch build",

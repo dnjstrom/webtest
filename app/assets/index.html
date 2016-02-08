@@ -11,16 +11,16 @@
 
   <div class="container">
     <notifications></notifications>
-    <header class="row">
-      <nav class="eight columns">
+    <header>
+      <nav>
         <ul class="navigation-links">
-          <li class="navigation-links__link"><a href="/bears">Bears</a></li>
-          <li class="navigation-links__link"><a href="/moose">Moose</a></li>
-          <li class="navigation-links__link"><a href="/wolfs">Wolves</a></li>
+          <li class="navigation-links__link" ng-class="{ 'navigation-links__link--active': isActive('/bears') }" ng-click="goTo('/bears')"><p>Bears</p></li>
+          <li class="navigation-links__link" ng-class="{ 'navigation-links__link--active': isActive('/moose') }" ng-click="goTo('/moose')"><p>Moose</p></li>
+          <li class="navigation-links__link" ng-class="{ 'navigation-links__link--active': isActive('/wolfs') }" ng-click="goTo('/wolfs')"><p>Wolves</p></li>
         </ul>
       </nav>
 
-      <h1 class="four columns header-title">Mock Server</h1>
+      <h1 class="header-title">Mock Server</h1>
     </header>
 
     <main ng-view></main>

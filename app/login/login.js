@@ -11,8 +11,14 @@ angular
     return {
       responseError: function (response) {
 
-        if (response.status >= 400 && response.status < 500) {
-          $location.path('/login');
+        switch (response.status) {
+          // Same logic for all the following codes, using fallthrough.
+          case 401:
+          case 403:
+          case 419:
+          case 440:
+            $location.path('/login');
+            break;
         }
 
         return $q.reject(response);

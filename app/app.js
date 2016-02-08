@@ -34,6 +34,15 @@ angular
       $locationProvider.html5Mode(true);
   }])
 
-  .controller("AppCtrl", ($scope) => {
+  .controller("AppCtrl", ['$scope', '$location', ($scope, $location) => {
     $scope.author = "Daniel Ström";
-  });
+
+    // Global utility functions.
+    $scope.isActive = function (path) {
+      return $location.path().includes(path);
+    };
+
+    $scope.goTo = function (path) {
+      return $location.path(path);
+    };
+  }]);
